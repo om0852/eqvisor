@@ -1,6 +1,7 @@
 import AboutUs from "@/components/AboutUs";
 import AlwaysConnected from "@/components/AlwaysConnected";
 import FinancialSection from "@/components/FinancialSection";
+import Footer from "@/components/Footer";
 import ImageContainer from "@/components/ImageContainer";
 import Navbar from "@/components/Navbar";
 import QuerySection from "@/components/QuerySection";
@@ -48,6 +49,7 @@ export default function Home() {
         <AboutUs />
         <QuerySection/>
         <AlwaysConnected/>
+        <Footer/>
       </div>
     </>
   );

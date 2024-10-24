@@ -107,3 +107,40 @@ position: -webkit-sticky;
   box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
   height: var(--cardHeight);
 }
+.footer-card-body{
+  border-radius: none;
+  height: auto;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+
+
+}
+.footer-card{
+  color: black;
+
+  position: sticky;
+  top: 0;
+}
+.footer-container{
+  width: 100%;
+  height: auto;
+  color: black;
+  margin: 0 auto;
+}
+#footer-cards{
+  list-style: none;
+  display: grid;
+  /* grid-template-columns: auto; */
+  grid-template-rows: 2;
+  /* gap: var(--cardMargin);
+  padding-bottom: calc((var(--cards)));
+  margin-bottom: var(--cardMargin); */
+}
+
+
+.btn:hover span{
+background-color: white;
+color: black;
+}
+.btn:hover span p{
+  color: black;
+}
