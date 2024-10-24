@@ -52,7 +52,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="footer-container">
+      <div className="footer-container bg-purple-400">
         <ul id="footer-cards" className="text-black">
           <li
             className="footer-card w-[100%] rounded-none h-[auto] "
