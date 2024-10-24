@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 
@@ -12,7 +12,11 @@ const Navbar = () => {
       setNavbar(true);
     }
   };
-  window.addEventListener("scroll", changeBackground);
+  useEffect(()=>{
+
+    window.addEventListener("scroll", changeBackground);
+    return ()=>window.removeEventListener("scroll",changeBackground)
+  },[])
   return (
     <div
       className={`z-50 navbar ${

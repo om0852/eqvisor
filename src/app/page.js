@@ -1,23 +1,22 @@
 import FinancialSection from "@/components/FinancialSection";
+import ImageContainer from "@/components/ImageContainer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
+            <Navbar />
+
       <div className="home-section w-full h-[auto]">
         {/* //home section  */}
-        <div
-          style={{
-            backgroundImage: `url("https://static.wixstatic.com/media/11062b_9b8a1888d9ab40e3aad9390af2ea539e~mv2.jpg/v1/fill/w_293,h_164,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_9b8a1888d9ab40e3aad9390af2ea539e~mv2.jpg)`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
+
+        <div    
           className="w-full  h-[auto]"
         >
-          <Navbar />
+          <img src={"/eqvisor_bg.webp"} alt="eqvisor"  className="absolute top-0 w-[100%] h-[100vh]"/>
           <div className="px-8">
-            <h1 className="text-white text-6xl mt-[8%] leading-snug last:leading-0 font-bold w-[50%]">
+            <h1 className=" z-10 relative text-white text-6xl mt-[8%] leading-snug last:leading-0 font-bold w-[50%]">
               A START-UP FOR START-UPS
             </h1>
             <button className="text-black mt-4 bg-white flex gap-4 flex-row py-2 rounded-full items-center justify-between w-[35vh] px-2">
@@ -40,6 +39,7 @@ export default function Home() {
           </div>
         </div>
         <FinancialSection />
+        <ImageContainer/>
       </div>
     </>
   );

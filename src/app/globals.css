@@ -5,6 +5,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --cards:4;
+  --cardHeight:50vh;
+  --cardTopPadding:0rem;
+  --cardMargin:2vw;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,4 +42,68 @@ color: rgb(10, 10, 244)violet;
 }
 .navbar.active{
 background-color: #0a0a0a;
+}
+
+
+
+.container{
+  width: 40%;
+  height: auto;
+  color: black;
+  margin: 0 auto;
+}
+#cards{
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--cards),var(--cardHeight));
+  gap: var(--cardMargin);
+  padding-bottom: calc((var(--cards)));
+  margin-bottom: var(--cardMargin);
+}
+
+#card1{
+  --index:1;
+}
+#card2{
+  --index:2;
+}
+#card3{
+  --index:3;
+}
+#card4{
+  --index:4;
+}
+
+
+.card{
+  position: sticky;
+  top: 20vh;
+  color: black;
+  padding-top: calc(var(--index)*var(--cardTopPadding));
+}
+.message{
+  padding-top: calc(var(--index));
+position: -webkit-sticky;
+}
+#card1 .card-body{
+  background-color: red;
+}
+#card2 .card-body{
+  background-color: rgb(68, 255, 0);
+}
+#card3 .card-body{
+  background-color: rgb(68, 0, 255);
+}
+#card4 .card-body{
+  background-color: rgb(255, 0, 204);
+}
+
+
+.card-body{
+  padding: 30px;
+  border-radius: 4vh;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+  height: var(--cardHeight);
 }
