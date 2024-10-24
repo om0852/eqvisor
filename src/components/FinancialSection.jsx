@@ -23,7 +23,7 @@ const FinancialSection = () => {
   return (
     <div className="w-full h-[auto] top-rounded bg-white top-[-5vh]">
       <div className="flex  pt-[20vh]">
-        <div className="w-[50%] sticky top-[20vh] h-[60vh] pl-[50px] flex flex-col justify-between">
+        <div className="w-[50%] sticky top-[20vh] h-[55vh] pl-[50px] flex flex-col justify-between">
           <div className="">
             <h1 className="text-xl font-semibold">FINANCIAL TOOLS</h1>
             <p className="text-[2.7rem] pt-2">Streamline Your Start-up</p>
