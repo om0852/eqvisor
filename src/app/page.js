@@ -1,20 +1,25 @@
+import AboutUs from "@/components/AboutUs";
+import AlwaysConnected from "@/components/AlwaysConnected";
 import FinancialSection from "@/components/FinancialSection";
 import ImageContainer from "@/components/ImageContainer";
 import Navbar from "@/components/Navbar";
+import QuerySection from "@/components/QuerySection";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-            <Navbar />
+      <Navbar />
 
       <div className="home-section w-full h-[auto]">
         {/* //home section  */}
 
-        <div    
-          className="w-full  h-[auto]"
-        >
-          <img src={"/eqvisor_bg.webp"} alt="eqvisor"  className="absolute top-0 w-[100%] h-[100vh]"/>
+        <div className="w-full  h-[auto]">
+          <img
+            src={"/eqvisor_bg.webp"}
+            alt="eqvisor"
+            className="absolute top-0 w-[100%] h-[100vh]"
+          />
           <div className="px-8">
             <h1 className=" z-10 relative text-white text-6xl mt-[8%] leading-snug last:leading-0 font-bold w-[50%]">
               A START-UP FOR START-UPS
@@ -39,7 +44,10 @@ export default function Home() {
           </div>
         </div>
         <FinancialSection />
-        <ImageContainer/>
+        <ImageContainer />
+        <AboutUs />
+        <QuerySection/>
+        <AlwaysConnected/>
       </div>
     </>
   );
