@@ -1,10 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 
 const Navbar = () => {
+  const [navbar, setNavbar] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY < 10) {
+      setNavbar(false);
+    } else {
+      setNavbar(true);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
   return (
-    <div className=" sticky top-0 left-0 w-full h-[12vh] flex flex-row items-center justify-between px-8 bg-black">
+    <div
+      className={`z-50 navbar ${
+        navbar ? "active" : "none"
+      } sticky top-0 left-0 w-full h-[12vh] flex flex-row items-center justify-between px-8 `}
+    >
       <div className="flex gap-16">
         <span className="text-[1.4rem] text-white">
           <strong>EQVISOR</strong>

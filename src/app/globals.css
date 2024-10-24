@@ -28,3 +28,14 @@ color: whitesmoke;
 ul li span:hover{
 color: rgb(10, 10, 244)violet;
 }
+.top-rounded{
+  border-radius: 3vh 3vh 0 0;
+}
+
+.navbar{
+  background-color: transparent;
+  transition: all 0.2s ease-in;
+}
+.navbar.active{
+background-color: #0a0a0a;
+}
