@@ -21,13 +21,13 @@ const AlwaysConnected = () => {
 
   return (
     <div className="w-full h-[auto] py-[15vh] text-black  bg-white overflow-hidden">
-      <h1 className="px-[10vh] uppercase text-2xl font-semibold text-black">
+      <h1 className="pl-[5vh] md:px-[10vh] uppercase text-2xl font-semibold text-black">
         Always connected
       </h1>
-      <div className="w-full flex justify-between grid-rows-1 min-sm:grid-cols-3 max-sm:gap-4 px-[30px] md:px-[10vh] py-10">
+      <div className="w-full flex justify-between flex-col gap-6 md:flex-row   px-[30px] md:px-[10vh] py-10">
         {coonectedData.map((data, index) => (
-          <div key={index} className="w-[auto] px-2 grid gap-2 last:pr-[10vh]  ">
-            <img src={data.img} />
+          <div key={index} className="w-[auto] px-2 grid md:gap-2 last:pr-[10vh]  ">
+            <img src={data.img} className="w-[34px] h-[34px] md:w-[45px] md:h-[45px]" />
             <h3 className="text-xl font-semibold">{data.count}</h3>
             <p className="text-lg">{data.title}</p>
           </div>
