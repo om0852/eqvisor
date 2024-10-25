@@ -58,7 +58,7 @@ const Footer = () => {
             className="footer-card w-[100%] rounded-none h-[auto] "
             id={`card12`}
           >
-            <div className="footer-card-body flex md:flex-row flex-col items-start justify-around py-[40px] px-10 bg-blue-600">
+            <div className="footer-card-body flex md:flex-row flex-col items-start justify-around py-[40px] px-10 bg-blue-400">
               <h1 className="text-xl md:text-4xl">Ready to get started? </h1>
               <div className="w-[100%]">
                 <h2 className="text-xl py-4">
