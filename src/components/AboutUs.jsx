@@ -15,7 +15,6 @@ const AboutUs = () => {
           <span className="ml-4">Read More</span>
           <span className="rounded-full p-2 bg-white">
             <img
-
               width="20"
               height="20"
               src="https://img.icons8.com/?size=50&id=15195&format=png&color=111111"
