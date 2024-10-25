@@ -52,20 +52,20 @@ const Footer = () => {
 
   return (
     <>
-      <div className="footer-container bg-purple-400 overflow-hidden">
-        <ul id="footer-cards" className="text-black">
+      <div className="footer-container max-w-full bg-purple-400">
+        <ul id="footer-cards" className="text-black w-full">
           <li
             className="footer-card w-[100%] rounded-none h-[auto] "
-            id={`card$`}
+            id={`card12`}
           >
-            <div className="footer-card-body flex items-center justify-around py-[40px] px-10 bg-blue-600">
-              <h1 className="text-4xl">Ready to get started? </h1>
-              <div className="w-[40%]">
+            <div className="footer-card-body flex md:flex-row flex-col items-start justify-around py-[40px] px-10 bg-blue-600">
+              <h1 className="text-xl md:text-4xl">Ready to get started? </h1>
+              <div className="w-[100%]">
                 <h2 className="text-xl py-4">
                   This is the space to introduce the Services section. Briefly
                   describe the types of services offered.
                 </h2>
-                <button className="btn text-black mt-4 bg-white hover:bg-black hover:text-white flex gap-4 flex-row py-2 rounded-full items-center justify-between w-[35vh] px-2 transition-all duration-300 ease-in-out">
+                <button className="btn text-black mt-4 bg-white hover:bg-black hover:text-white flex gap-4 flex-row py-2 rounded-full items-center justify-between w-[25vh] md:w-[35vh] px-2 transition-all duration-300 ease-in-out">
                   <p className="ml-4">Contact Us</p>
                   <span className="rounded-full  w-10 h-10 grid place-items-center bg-black hover:bg-white transition-all duration-300 ease-in-out">
                     <p className="text-white font-semibold">&gt;</p>
@@ -81,6 +81,7 @@ const Footer = () => {
               background: "black",
               color: "white",
               height: "100vh",
+              width:"100%",
               borderRadius: "3vh 3vh 0 0",
               position: "relative",
             }}
@@ -93,13 +94,13 @@ const Footer = () => {
               }}
               className="footer-card-body flex flex-col justify-between py-[20px] px-10 bg-blue-600"
             >
-              <h1 className="text-[6rem] font-bold py-[6vh]">EQVISOR</h1>
-              <div className="flex flex-row justify-start gap-0">
+              <h1 className=" text-3xl md:text-[6rem] font-bold py-[6vh]">EQVISOR</h1>
+              <div className="md:flex flex-row justify-start gap-0">
                 <div>
                   <p>JOIN OUR NEWSLETTER</p>
                   <form
                     onSubmit={handleSubmit}
-                    className="flex flex-col gap-2 py-6 w-[55vh]"
+                    className="flex flex-col gap-2 py-6 w-[35vh] md:w-[55vh]"
                   >
                     <label htmlFor="email">Email</label>
                     <input
@@ -147,7 +148,7 @@ const Footer = () => {
                         ""
                       )}
                     </p>
-                    <div className="flex justify-evenly items-center py-4">
+                    <div className="flex md:flex-row flex-col gap-4 md:gap-0 md:justify-evenly md:items-center py-4">
                       <span>
                         <span className="flex flex-row items-start">
                           <input
@@ -197,25 +198,26 @@ const Footer = () => {
                           ""
                         )}
                       </span>
-                      <button className="py-2 px-6 hover:bg-purple-400 bg-white text-black rounded-full">
+                      <button className="py-2 px-6 max-sm:w-[20vh] hover:bg-purple-400 bg-white text-black rounded-full">
                         Submit
                       </button>
                     </div>
                   </form>
                 </div>
-                <div className="flex px-[15vh] flex-row justify-between w-full">
+                <div className="flex px-[1vh] md:px-[15vh] flex-col gap-5 md:gap-0 md:flex-row justify-between w-full">
                   {data.map((data1, index) => (
                     <div key={index}>
                       <p>{data1.section}</p>
                       <ul>
                         {data1?.links?.map((link, index2) => (
-                          <li key={index2}>{link}</li>
+                          <li className="text-md" key={index2}>{link}</li>
                         ))}
                       </ul>
                     </div>
                   ))}
                 </div>
               </div>
+        <div className="px-4 py-6">© 2024 by EQvisor</div>
             </div>
           </li>
         </ul>
