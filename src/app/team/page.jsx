@@ -11,7 +11,7 @@ const Page = () => {
       {/* <Navbar /> */}
       <div className="home-section w-full h-[auto] bg-white">
         <AboutUs />
-        <div className="pl-20 h-[auto]">
+        <div className=" pl-5 md:pl-20 h-[auto]">
             <h1 className="py-2 text-xl font-semibold">OUR PEOPLE</h1>
             <h1 className="pb-4 text-4xl">The Minds Behind Eqvisor</h1>
         <TeamContainer/>
