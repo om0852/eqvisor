@@ -53,11 +53,6 @@ background-color: #0a0a0a;
   margin: 0 auto;
 }
 
-@media screen and (max-width:768px) {
-  .container{
-    width: 100%;
-  }
-}
 #cards{
   list-style: none;
   padding-left: 0;
@@ -85,26 +80,15 @@ background-color: #0a0a0a;
 
 .card{
   position: sticky;
-  top: 20vh;
+  top: 40vh;
   color: black;
   padding-top: calc(var(--index)*var(--cardTopPadding));
 }
 .message{
   padding-top: calc(var(--index));
-position: -webkit-sticky;
+/* position: -webkit-sticky;, */
 }
-#card1 .card-body{
-  background-color: red;
-}
-#card2 .card-body{
-  background-color: rgb(68, 255, 0);
-}
-#card3 .card-body{
-  background-color: rgb(68, 0, 255);
-}
-#card4 .card-body{
-  background-color: rgb(255, 0, 204);
-}
+
 
 
 .card-body{
@@ -112,6 +96,23 @@ position: -webkit-sticky;
   border-radius: 4vh;
   box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
   height: var(--cardHeight);
+}
+
+@media screen and (max-width:768px) {
+  .container{
+    width: 90%;
+    position: relative;
+    top: 0vh;
+  }
+  #cards{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .card-body{
+    height: 40vh;
+    margin-top: 0vh;
+  }
 }
 .footer-card-body{
   border-radius: none;

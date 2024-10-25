@@ -23,7 +23,7 @@ const QuerySection = () => {
   ];
 
   return (
-    <div className="w-full bg-stone-300 h-auto py-[10vh] px-[10vh]">
+    <div className="w-full bg-stone-300 h-auto py-[10vh] px-[10vh] overflow-hidden">
       <div className="py-[10vh] h-[70vh]">
         <h1 className="uppercase text-2xl">Why Eqvisor?</h1>
         <p className="w-[80vh] text-5xl">Your Satisfaction is our priority</p>

@@ -20,7 +20,7 @@ const AlwaysConnected = () => {
   ];
 
   return (
-    <div className="w-full h-[auto] py-[15vh]  bg-white">
+    <div className="w-full h-[auto] py-[15vh]  bg-white overflow-hidden">
       <h1 className="px-[10vh] uppercase text-2xl font-semibold">
         Always connected
       </h1>

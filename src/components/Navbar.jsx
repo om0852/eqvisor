@@ -47,7 +47,7 @@ const Navbar = () => {
     <div
       className={`z-50 navbar ${
         navbar ? "active" : "none"
-      } sticky top-0 left-0 w-full h-[12vh] flex flex-row items-center justify-between px-8 `}
+      } sticky top-0 left-0 w-full h-[12vh] flex flex-row items-center justify-between px-8`}
     >
       {/* mobile navbar */}
       {toggle && (
@@ -78,6 +78,7 @@ const Navbar = () => {
             <ul className="px-10 grid gap-4">
               {navbarMenu.map((data, index) => (
                 <li
+                key={index}
                   className={`${
                     pathname == data.href ? "text-blue-600" : "text-black"
                   } text-2xl font-thin`}
