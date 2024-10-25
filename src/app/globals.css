@@ -52,6 +52,12 @@ background-color: #0a0a0a;
   color: black;
   margin: 0 auto;
 }
+
+@media screen and (max-width:768px) {
+  .container{
+    width: 100%;
+  }
+}
 #cards{
   list-style: none;
   padding-left: 0;

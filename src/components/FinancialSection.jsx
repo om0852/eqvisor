@@ -21,15 +21,15 @@ const FinancialSection = () => {
   ];
 
   return (
-    <div className="w-full h-[auto] top-rounded bg-white top-[-5vh] pb-[20vh]">
-      <div className="flex  pt-[20vh]">
-        <div className="w-[50%] sticky top-[20vh] h-[55vh] pl-[50px] flex flex-col justify-between">
-          <div className="">
+    <div className="w-full h-[auto] text-black top-rounded bg-white top-[-5vh] pb-[20vh]">
+      <div className="flex flex-col md:flex-row pt-[20vh]">
+        <div className="w-[70%] md:w-[50%] sticky top-[20vh] h-[auto] pb-10 md:h-[55vh] pl-[50px] flex flex-col justify-start gap-6 md:gap-0 md:justify-between">
+          <div className="w-full">
             <h1 className="text-xl font-semibold">FINANCIAL TOOLS</h1>
-            <p className="text-[2.7rem] pt-2">Streamline Your Start-up</p>
+            <p className=" text-xl md:text-[2.7rem] pt-2">Streamline Your Start-up</p>
           </div>
           <div className="">
-            <p className="w-[90%] text-xl">
+            <p className="w-[100%] md:text-md md:text-xl">
               This is the space to introduce the Services section. Briefly
               describe the types of services offered and highlight any special
               benefits or features.
