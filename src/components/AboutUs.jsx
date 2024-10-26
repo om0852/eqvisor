@@ -6,8 +6,8 @@ const AboutUs = () => {
       <div className="py-[20vh] pl-[30px]  w-full md:px-[20vh]">
         <h1 className=" text-xl md:text-2xl font-semibold">About Us</h1>
         <p className=" text-2xl md:text-5xl w-[95%] md:w-[80%]">
-          This is a space to share more about the business: who's behind it,
-          what it does and what this site has to offer. It’s an opportunity to
+          This is a space to share more about the business: who&apos;s behind it,
+          what it does and what this site has to offer. It&apos;s an opportunity to
           tell the story behind the business or describe a special service or
           product it offers.
         </p>

@@ -57,7 +57,7 @@ const Page = () => {
           ))}
         </div>
         <div>
-          <h1 className="text-5xl font-thin">We're good with numbers</h1>
+          <h1 className="text-5xl font-thin">We&apos;re good with numbers</h1>
           <div className="flex flex-row justify-between items-center py-5">
             <div>
               <h1 className="text-6xl font-bold">50,000</h1>
