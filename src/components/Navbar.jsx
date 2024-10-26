@@ -85,6 +85,7 @@ const Navbar = () => {
             <ul className="px-10 grid gap-4">
               {navbarMenu.map((data, index) => (
                 <li
+                onClick={handleToggle}
                   key={index}
                   className={`${
                     pathname == data.href ? "text-blue-600" : "text-black"
