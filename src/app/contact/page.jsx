@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Input from "./_components/input";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const Page = () => {
   const [error, setError] = useState(null);
@@ -14,6 +15,7 @@ const Page = () => {
   };
   return (
     <>
+      <Navbar />
       <div className="w-full h-auto py-[15vh] bg-[#BDBDFF] px-[2vh] md:px-[10vh] overflow-hidden text-black">
         <div className="text-center mb-8">
           <h1 className=" text-xl md:text-2xl font-semibold">

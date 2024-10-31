@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <div className="home-section w-full h-[auto]">
         {/* //home section  */}
+        <Navbar/>
         <HomeContainer />
         <FinancialSection />
         <ImageContainer />

@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceCard from "./_components/ServiceCard";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const Page = () => {
   const services = [
@@ -32,6 +33,7 @@ const Page = () => {
 
   return (
     <>
+        <Navbar/>
       <div className="w-full h-auto pt-[20vh] px-[3vh] md:px-[10vh]">
         <div>
           <h1 className="font-semibold text-xl">EXPLORE LUMINU SOLUTIONS</h1>

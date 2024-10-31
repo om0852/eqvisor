@@ -8,7 +8,7 @@ import Misson from "./_components/Misson";
 const Page = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="home-section w-full h-[auto] bg-white text-black">
         <AboutUs />
         <div className=" pl-5 md:pl-20 h-[auto] text-black">
