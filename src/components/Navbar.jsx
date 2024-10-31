@@ -153,8 +153,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="hidden md:block">
-        <button className="bg-white hover:bg-purple-300 text-black py-[10px] px-6 rounded-full">
-          Contact
+        <button className="bg-white hover:bg-purple-300 text-black py-[10px] px-2 w-[20vh] rounded-full">
+          Register Now
         </button>
       </div>
     </div>

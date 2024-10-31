@@ -80,7 +80,7 @@ const Footer = () => {
             style={{
               background: "black",
               color: "white",
-              height: "100vh",
+              height: "90vh",
               width:"100%",
               borderRadius: "3vh 3vh 0 0",
               position: "relative",

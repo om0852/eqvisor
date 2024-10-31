@@ -43,7 +43,9 @@ const Page = () => {
         </div>
         <div className="pt-[20vh]">
           <h1 className="font-semibold text-xl">CHOOSE YOUR TRACK</h1>
-          <p className=" text-3xl md:text-4xl">Customized plans for every industry sector</p>
+          <p className=" text-3xl md:text-4xl">
+            Customized plans for every industry sector
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10">
           {services.map((data, index) => (

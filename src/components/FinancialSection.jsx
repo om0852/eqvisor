@@ -21,7 +21,7 @@ const FinancialSection = () => {
   ];
 
   return (
-    <div className="w-full h-[auto] text-black top-rounded bg-white md:top-[-5vh] pb-[20vh]">
+    <div className="w-full h-[auto] text-black top-rounded bg-white md:top-[-10vh] pb-[20vh] md:relative">
       <div className="flex flex-col md:flex-row pt-[20vh]">
         <div className="w-[70%] sticky top-10 md:top-[30vh] md:w-[50%] h-[auto] md:pb-20 md:h-[55vh] pl-[20px] md:pl-[50px] flex flex-col justify-start gap-6 md:gap-0 md:justify-between">
           <div className="w-full">
