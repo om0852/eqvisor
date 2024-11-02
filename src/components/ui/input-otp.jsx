@@ -16,7 +16,7 @@ const InputOTP = React.forwardRef(({ className, containerClassName, ...props }, 
 InputOTP.displayName = "InputOTP"
 
 const InputOTPGroup = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex items-center", className)} {...props} />
+  <div ref={ref} className={cn("flex items-center border-slate-200 border-[1px]", className)} {...props} />
 ))
 InputOTPGroup.displayName = "InputOTPGroup"
 
@@ -28,16 +28,16 @@ const InputOTPSlot = React.forwardRef(({ index, className, ...props }, ref) => {
     (<div
       ref={ref}
       className={cn(
-        "relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        isActive && "z-10 ring-1 ring-ring",
+        "relative flex h-9 w-9 items-center justify-center border-y border-r-[1px] border-black   text-sm shadow-sm transition-all  first:border-l ",
+        isActive && "z-10 ring-1 ring-ring ",
         className
       )}
       {...props}>
       {char}
       {hasFakeCaret && (
         <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
+          className="pointer-events-none absolute inset-0 flex items-center  justify-center">
+          <div className="h-4 w-px animate-caret-blink bg-foreground  duration-1000" />
         </div>
       )}
     </div>)
