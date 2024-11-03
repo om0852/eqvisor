@@ -4,24 +4,76 @@ import React, { useState } from "react";
 const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
   const toggleConfirmPasswordVisibility = () =>
     setShowConfirmPassword(!showConfirmPassword);
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    checkPasswordMatch(e.target.value, confirmPassword);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+    checkPasswordMatch(password, e.target.value);
+  };
+
+  const checkPasswordMatch = (password, confirmPassword) => {
+    if (password && confirmPassword && password !== confirmPassword) {
+      setError("Passwords do not match");
+    } else {
+        if(password.length<8){
+        setError("Password size must be greater the 7");
+        }
+        else{
+
+            setError("");
+        }
+    }
+   
+  };
+
+  //generating strong password
+  const generateStrongPassword = () => {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    let generatedPassword = "";
+    for (let i = 0; i < 10; i++) {
+      generatedPassword += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    setPassword(generatedPassword);
+    setConfirmPassword(generatedPassword);
+    checkPasswordMatch(generatedPassword, generatedPassword);
+    setError(""); // Clear any previous error
+  };
+
+  const handleSubmit = () => {
+    checkPasswordMatch(password, confirmPassword);
+    if (error == "") {
+      //furture logic for password reset
+    }
+  };
   return (
     <div className="w-full h-[100vh] flex items-center justify-center">
       <div className="w-[70%] h-[80%]">
-        <div className="login-shadow w-[80%] h-full flex flex-col items-center justify-center py-[10vh] px-[10vh] ">
+        <div className="login-shadow w-[80%] h-full flex flex-col items-center justify-center py-[10vh] px-[10vh]">
           <div className="flex flex-col w-[100%] gap-6 h-[30vh]">
             <div className="flex items-center">
               <Input
                 type={showPassword ? "text" : "password"}
-                placeholder={"Enter new Password"}
-                id={"new_password"}
+                placeholder="Enter new Password"
+                id="new_password"
+                value={password}
+                onChange={handlePasswordChange}
               />
               <div
-                className="rounded-r-md inner-shadow bg-gray-50 border  border-gray-300 text-gray-900 border-l-0 h-full px-1 grid place-items-center cursor-pointer"
+                className="rounded-r-md inner-shadow bg-gray-50 border border-gray-300 text-gray-900 border-l-0 h-full px-1 grid place-items-center cursor-pointer"
                 onClick={togglePasswordVisibility}
               >
                 {showPassword ? (
@@ -65,11 +117,13 @@ const ResetPassword = () => {
             <div className="flex items-center">
               <Input
                 type={showConfirmPassword ? "text" : "password"}
-                placeholder={"Confirm new Password"}
-                id={"confirm_password"}
+                placeholder="Confirm new Password"
+                id="confirm_password"
+                value={confirmPassword}
+                onChange={handleConfirmPasswordChange}
               />
               <div
-                className="rounded-r-md inner-shadow  bg-gray-50 border  border-gray-300 text-gray-900 border-l-0 h-full px-1 grid place-items-center cursor-pointer"
+                className="rounded-r-md inner-shadow bg-gray-50 border border-gray-300 text-gray-900 border-l-0 h-full px-1 grid place-items-center cursor-pointer"
                 onClick={toggleConfirmPasswordVisibility}
               >
                 {showConfirmPassword ? (
@@ -110,10 +164,19 @@ const ResetPassword = () => {
                 )}
               </div>
             </div>
-            <h1 className="text-sm text-blue-600">Suggest a strong password</h1>
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+            <h1
+              className="text-sm text-blue-600 cursor-pointer"
+              onClick={generateStrongPassword}
+            >
+              Suggest a strong password
+            </h1>
           </div>
           <div className="w-full">
-            <button className="w-full mt-[5vh] text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            <button
+              onClick={handleSubmit}
+              className="w-full mt-[5vh] text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            >
               Submit
             </button>
           </div>

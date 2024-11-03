@@ -6,13 +6,14 @@ import {
 } from "@/components/ui/input-otp";
 import React, { useEffect, useState } from "react";
 import ResetPassword from "../_components/ResetPassword";
+import { toast } from "sonner";
 
 const Page = () => {
   const [otpStatus, setOtpStatus] = useState(false);
   const [timer, setTimer] = useState({ min: 5, sec: 0 });
   const [isActive, setIsActive] = useState(false);
   const [resendOtp, setResendOtp] = useState(true);
-const [resetPasswordStatus,setResetPasswordStatus]=useState(true)
+const [resetPasswordStatus,setResetPasswordStatus]=useState(false)
   // Function to handle timer countdown
   useEffect(() => {
     let interval;
@@ -56,6 +57,15 @@ const [resetPasswordStatus,setResetPasswordStatus]=useState(true)
   };
   if(resetPasswordStatus){
     return <ResetPassword/>
+  }
+
+
+  const handleSubmit=()=>{
+toast.success("OTP verified successfully");
+    //TODO:logic for validating user 
+
+    //this function use to show resetpassword page
+    setResetPasswordStatus(true);
   }
 
   return (
@@ -126,7 +136,7 @@ const [resetPasswordStatus,setResetPasswordStatus]=useState(true)
                 {timer.sec.toString().padStart(2, "0")}
               </div>
             </div>
-            <button className="w-[25vh] mt-[5vh] text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            <button type="button" onClick={handleSubmit} className="w-[25vh] mt-[5vh] text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
               Submit
             </button>
           </div>
