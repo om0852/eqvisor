@@ -5,13 +5,14 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import React, { useEffect, useState } from "react";
+import ResetPassword from "../_components/ResetPassword";
 
 const Page = () => {
   const [otpStatus, setOtpStatus] = useState(false);
   const [timer, setTimer] = useState({ min: 5, sec: 0 });
   const [isActive, setIsActive] = useState(false);
   const [resendOtp, setResendOtp] = useState(true);
-
+const [resetPasswordStatus,setResetPasswordStatus]=useState(true)
   // Function to handle timer countdown
   useEffect(() => {
     let interval;
@@ -53,6 +54,9 @@ const Page = () => {
     setIsActive(false);
     setResendOtp(true);
   };
+  if(resetPasswordStatus){
+    return <ResetPassword/>
+  }
 
   return (
     <div className="w-full h-[100vh] flex items-center justify-center">
