@@ -5,19 +5,19 @@ import React, { useState } from "react";
 import DigiLockerAccept from "./_components/DigiLockerAccept";
 
 const Page = () => {
-  const [allowPage, setAllowPage] = useState(true);
+  const [allowPage, setAllowPage] = useState(false);
   if (allowPage) {
-    return <DigiLockerAccept />;
+    return <DigiLockerAccept setAllowPage={setAllowPage} />;
   }
   return (
     <div className="w-full h-[100vh] flex items-center justify-center">
-      <div className="relative z-[5] w-[100%] md:w-[70%] h-[70%]">
+      <div className="relative pl-[5vh] z-[5] w-[100%] md:w-[70%] h-[70%]">
         <StepComponent
           step={1}
           totalStep={7}
           description={"Aadhaar KYC using DigiLocker"}
         />
-        <div className="relative bg-white z-[5]  rounded-xl flex flex-col gap-10 w-[70%] pt-[3vh] pb-[5vh] h-[70%]">
+        <div className="relative bg-white z-[5]  rounded-xl flex flex-col gap-10 w-[90%] md:w-[70%] pt-[3vh] pb-[5vh] h-[70%]">
           <p>
             We will collect your address-related information from DigiLocker
             account for KYC. Your Aadhaar number/copy will not be stored.
@@ -30,7 +30,12 @@ const Page = () => {
               start over
             </Link>
           </p>
-          <button className="w-full rounded-md bg-blue-600 py-2 text-white">
+          <button
+            onClick={() => {
+              setAllowPage(true);
+            }}
+            className="w-full rounded-md bg-blue-600 py-2 text-white"
+          >
             Continue to DigiLocker
           </button>
           <p className="text-slate-400 text-sm pt-[6vh]">

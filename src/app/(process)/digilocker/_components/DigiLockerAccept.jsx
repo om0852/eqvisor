@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Success from "./Success";
 
-const DigiLockerAccept = () => {
+const DigiLockerAccept = ({setAllowPage}) => {
     const [success,setSuccess]=useState(false);
     if(success){
         return <Success/>
@@ -37,7 +37,7 @@ const DigiLockerAccept = () => {
               </svg>
               Allow
             </div>
-            <div className="w-[50%] text-center  py-[1vh]">Deny</div>
+            <div onClick={()=>setAllowPage(false)} className="w-[50%] text-center  py-[1vh]">Deny</div>
           </div>
         </div>
       </div>
