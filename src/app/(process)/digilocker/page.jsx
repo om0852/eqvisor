@@ -1,8 +1,14 @@
+"use client";
 import StepComponent from "@/components/StepComponent";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import DigiLockerAccept from "./_components/DigiLockerAccept";
 
 const Page = () => {
+  const [allowPage, setAllowPage] = useState(true);
+  if (allowPage) {
+    return <DigiLockerAccept />;
+  }
   return (
     <div className="w-full h-[100vh] flex items-center justify-center">
       <div className="relative z-[5] w-[100%] md:w-[70%] h-[70%]">
@@ -19,10 +25,20 @@ const Page = () => {
             <br></br>
             <br></br>
             The Aadhaar and PAN ABCD0789I should belong to you, the applicant.
-            If it does not,<Link className="text-blue-500" href={"/panprocess"}>start over</Link>
+            If it does not,
+            <Link className="text-blue-500" href={"/panprocess"}>
+              start over
+            </Link>
           </p>
-          <button className="w-full rounded-md bg-blue-600 py-2 text-white">Continue to DigiLocker</button>
-<p className="text-slate-400 text-sm pt-[6vh]">*By clicking the above button, I consent to use my Aadhaar related documents and information to conduct online KYC for opening an account in the EQvisor pvt. ltd. in order to avail the services they provide.</p>
+          <button className="w-full rounded-md bg-blue-600 py-2 text-white">
+            Continue to DigiLocker
+          </button>
+          <p className="text-slate-400 text-sm pt-[6vh]">
+            *By clicking the above button, I consent to use my Aadhaar related
+            documents and information to conduct online KYC for opening an
+            account in the EQvisor pvt. ltd. in order to avail the services they
+            provide.
+          </p>
         </div>
       </div>
     </div>
