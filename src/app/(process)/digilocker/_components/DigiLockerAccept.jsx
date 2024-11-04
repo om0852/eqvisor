@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Success from "./Success";
 
 const DigiLockerAccept = () => {
+    const [success,setSuccess]=useState(false);
+    if(success){
+        return <Success/>
+    }
   return (
     <div className="w-full h-[100vh] flex items-center justify-center overflow-hidden">
       <div className="relative flex justify-center px-[1vh] z-[5] w-[100%] md:w-[70%] h-[70%]">
@@ -15,7 +20,7 @@ const DigiLockerAccept = () => {
             with EQvisor.
           </div>
           <div className=" cursor-pointer flex w-full overflow-hidden rounded-full border-[1px] border-black ">
-            <div className="flex gap-2 justify-center w-[50%] text-center bg-blue-500 text-white py-[1vh]">
+            <div onClick={()=>setSuccess(true)} className="flex gap-2 justify-center w-[50%] text-center bg-blue-500 text-white py-[1vh]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
