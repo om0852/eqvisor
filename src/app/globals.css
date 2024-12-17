@@ -160,7 +160,7 @@ background-color: #0a0a0a;
 
 .card{
   position: sticky;
-  top: 40vh;
+  top: 30vh;
   color: black;
   padding-top: calc(var(--index)*var(--cardTopPadding));
 }

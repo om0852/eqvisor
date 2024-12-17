@@ -5,16 +5,17 @@ import React, { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const Page = () => {
-  const [captcha, setCaptcha] = useState('');
-  const [userInput, setUserInput] = useState('');
-  const [aadharNumber, setAadharNumber] = useState('');
-  const [message, setMessage] = useState('');
-  
+  const [captcha, setCaptcha] = useState("");
+  const [userInput, setUserInput] = useState("");
+  const [aadharNumber, setAadharNumber] = useState("");
+  const [message, setMessage] = useState("");
+
   const router = useRouter();
   // Generate a new CAPTCHA code
   function generateCaptcha() {
-    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let captchaText = '';
+    const chars =
+      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let captchaText = "";
     for (let i = 0; i < 6; i++) {
       captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
     }
@@ -41,26 +42,26 @@ const Page = () => {
     // Aadhaar number validation (12 digits)
     const aadharPattern = /^\d{12}$/;
     if (!aadharPattern.test(aadharNumber)) {
-      toast.error('Please enter a valid 12-digit Aadhaar number.');
+      toast.error("Please enter a valid 12-digit Aadhaar number.");
       return;
     }
 
     // CAPTCHA verification
     if (userInput === captcha) {
-      toast.success('Captcha verified successfully!');
-//TODO:preform aadhar verification if needed
+      toast.success("Captcha verified successfully!");
+      //TODO:preform aadhar verification if needed
 
-      router.push("/personal_information")
+      router.push("/personal_information");
     } else {
-      toast.error('Captcha did not match, please try again.');
+      toast.error("Captcha did not match, please try again.");
     }
   };
 
   // Refresh the CAPTCHA
   const refreshCaptcha = () => {
     setCaptcha(generateCaptcha());
-    setUserInput('');
-    setMessage('');
+    setUserInput("");
+    setMessage("");
   };
 
   return (
@@ -94,7 +95,10 @@ const Page = () => {
             placeholder="Enter CAPTCHA"
           />
         </div>
-        <p className="text-blue-600 cursor-pointer mt-2" onClick={refreshCaptcha}>
+        <p
+          className="text-blue-600 cursor-pointer mt-2"
+          onClick={refreshCaptcha}
+        >
           Refresh Captcha
         </p>
         <button
