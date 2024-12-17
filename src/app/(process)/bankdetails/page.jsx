@@ -1,8 +1,10 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export const UploadSec = () => {
   // State to store form data separately
+  const router = useRouter();
   const [ifscData, setIfscData] = useState({
     IFSC: "",
     MICR: "",
@@ -40,7 +42,9 @@ export const UploadSec = () => {
   const handleIfscSubmit = (e) => {
     e.preventDefault();
     if (!ifscTermsAccepted) {
-      alert("You must accept the terms and conditions to proceed for IFSC form.");
+      alert(
+        "You must accept the terms and conditions to proceed for IFSC form."
+      );
     } else {
       const formattedData = {
         type: "IFSC Form",
@@ -49,6 +53,7 @@ export const UploadSec = () => {
         Account_Number: ifscData.AC,
       };
       console.log("IFSC Form Data:", formattedData);
+      router.push("/faceverification");
     }
   };
 
@@ -56,7 +61,9 @@ export const UploadSec = () => {
   const handleUpiSubmit = (e) => {
     e.preventDefault();
     if (!upiTermsAccepted) {
-      alert("You must accept the terms and conditions to proceed for UPI form.");
+      alert(
+        "You must accept the terms and conditions to proceed for UPI form."
+      );
     } else {
       const formattedData = {
         type: "UPI Form",
@@ -64,6 +71,7 @@ export const UploadSec = () => {
         UPI_ID: upiData.UPI,
       };
       console.log("UPI Form Data:", formattedData);
+      router.push("/faceverification");
     }
   };
 
