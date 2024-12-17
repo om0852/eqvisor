@@ -1,5 +1,6 @@
 "use client";
 import StepComponent from "@/components/StepComponent";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
@@ -14,7 +15,7 @@ const Page = () => {
     investmentExperience: "",
     belongsToVC: "",
   });
-
+const router = useRouter();
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,6 +49,7 @@ const Page = () => {
       return;
     }
     toast.success("Form submitted successfully!");
+    router.push("/bankdetails")
   };
 
   return (
