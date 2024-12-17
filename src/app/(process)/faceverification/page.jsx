@@ -1,10 +1,11 @@
-"use client"
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const Link_ac = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  
+  const router = useRouter();
   // Set the initial verification code as null
   const [verificationCode, setVerificationCode] = useState(null);
 
@@ -22,15 +23,15 @@ const Link_ac = () => {
           videoRef.current.srcObject = stream;
         }
       })
-      .catch((err) => console.error('Error accessing webcam: ', err));
+      .catch((err) => console.error("Error accessing webcam: ", err));
   };
 
   // Capture photo function
   const capturePhoto = () => {
     const canvas = canvasRef.current;
     const video = videoRef.current;
-    const context = canvas.getContext('2d');
-    
+    const context = canvas.getContext("2d");
+
     // Set canvas size equal to video element size
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -39,8 +40,9 @@ const Link_ac = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     // Convert the canvas content to an image (this can be sent to a server or processed)
-    const imageUrl = canvas.toDataURL('image/png');
-    console.log('Captured Image:', imageUrl); // You can handle the image data here (upload, save, etc.)
+    const imageUrl = canvas.toDataURL("image/png");
+    console.log("Captured Image:", imageUrl); // You can handle the image data here (upload, save, etc.)
+    router.push("/document");
   };
 
   // Handle Refresh Code button click
@@ -56,36 +58,44 @@ const Link_ac = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden pr-10">
+    <div className="relative w-full h-[170vh] lg:h-[auto] overflow-hidden pr-10">
       <div className="absolute top-[-110vh] right-[-180vh] w-[300vh] h-[200vh] bg-blue-500 rounded-tl-[100vh] rounded-bl-[100vh]"></div>
       <div className="relative z-10">
-        <section className="mt-8 ml-12 h-[100px] w-1/2">
+        <section className="mt-8 ml-12 h-[100px] w-full md:w-1/2">
           <div className="text-gray-500">
             <h3>Step 5 of 6</h3>
           </div>
           <div>
-            <h1 className="text-xl font-bold">Face verification (IPV)</h1>
+            <h1 className="text-xl font-bold text-center md:text-left">
+              Face verification (IPV)
+            </h1>
           </div>
         </section>
 
-        <section className="flex flex-row mt-0">
+        <section className="flex flex-col md:flex-row mt-0">
           {/* Instructions Section */}
-          <section className="border border-gray-200 rounded-xl bg-white w-3/5 ml-12 p-12">
+          <section className="border border-gray-200 rounded-xl bg-white w-full md:w-3/5 mx-4 md:mx-12 p-6 md:p-12">
             <label>
               <div className="text-blue-600">
-                <h2 className="text-lg font-semibold">In order to perform your facial verification kindly</h2>
-                <h2 className="text-lg font-semibold">follow the given steps.</h2>
+                <h2 className="text-lg font-semibold text-center md:text-left">
+                  In order to perform your facial verification kindly
+                </h2>
+                <h2 className="text-lg font-semibold text-center md:text-left">
+                  follow the given steps.
+                </h2>
               </div>
             </label>
             <ol className="list-decimal ml-6 mt-4">
               <li>
                 <h3 className="text-base font-medium">
-                  Take a blank paper and using a black marker neatly write the below generated code on the paper.
+                  Take a blank paper and using a black marker neatly write the
+                  below generated code on the paper.
                 </h3>
               </li>
               <li>
                 <h3 className="text-base font-medium mt-4">
-                  Click a picture of yourself holding the paper. The paper and your face need to be clearly visible in the photo.
+                  Click a picture of yourself holding the paper. The paper and
+                  your face need to be clearly visible in the photo.
                 </h3>
               </li>
             </ol>
@@ -105,9 +115,11 @@ const Link_ac = () => {
           </section>
 
           {/* Webcam Section */}
-          <section className="border border-gray-200 rounded-xl bg-white w-2/5 ml-12 p-12">
+          <section className="border border-gray-200 rounded-xl bg-white w-full md:w-2/5 mx-4 md:mx-12 p-6 md:p-12 mt-8 md:mt-0">
             <div>
-              <h1 className="text-xl font-bold">Live Webcam Here</h1>
+              <h1 className="text-xl font-bold text-center md:text-left">
+                Live Webcam Here
+              </h1>
             </div>
             <div className="relative w-full h-[320px]">
               <video
@@ -130,15 +142,16 @@ const Link_ac = () => {
           </section>
         </section>
 
-        <div className="text-blue-700 mt-8 ml-24">
+        <div className="text-blue-700 mt-8 ml-24 text-center md:text-left">
           <p className="text-sm">
-            *EQvisor does not save the uploaded photo for any use other than face verification. We adhere to our terms and conditions.
+            *EQvisor does not save the uploaded photo for any use other than
+            face verification. We adhere to our terms and conditions.
           </p>
         </div>
       </div>
 
       {/* Hidden Canvas to capture the image */}
-      <canvas ref={canvasRef} style={{ display: 'none' }} />
+      <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
   );
 };

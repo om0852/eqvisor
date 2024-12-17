@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import PaymentButton from "./_components/PaymentButton";
 import Head from "next/head";
@@ -17,8 +17,8 @@ const UploadDocuments = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-[100%] min-h-screen bg-gray-50">
-              <Head>
+    <div className="flex flex-col items-center justify-center w-full h-[auto] overflow-hidden lg:min-h-screen bg-gray-50">
+      <Head>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
       </Head>
 
@@ -30,20 +30,15 @@ const UploadDocuments = () => {
         {/* Income Proof - Disabled */}
         <div className="mb-6">
           <label className="block text-gray-600 text-sm mb-2">Income proof</label>
-          <div className="flex space-x-4 items-center">
-            <select
-              
-              className="flex-grow border rounded px-3 py-2 text-sm text-gray-400 bg-gray-100 "
-            >
-              <option disabled value="" className="cursor-not-allowed">Select proof type</option>
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center">
+            <select className="flex-grow border rounded px-3 py-2 text-sm text-gray-400 bg-gray-100">
+              <option disabled value="" className="cursor-not-allowed">
+                Select proof type
+              </option>
               <option value="salary_slip">Salary Slip</option>
               <option value="bank_statement">Bank Statement</option>
-
             </select>
-            <button
-              
-              className="bg-gray-300 text-gray-500 px-4 py-2 rounded text-sm font-medium cursor-not-allowed"
-            >
+            <button className="bg-gray-300 text-gray-500 px-4 py-2 rounded text-sm font-medium cursor-not-allowed">
               Upload
             </button>
           </div>
@@ -52,7 +47,7 @@ const UploadDocuments = () => {
         {/* Signature Upload */}
         <div className="mb-6">
           <label className="block text-gray-600 text-sm mb-2">Signature*</label>
-          <div className="flex space-x-4 items-center">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center">
             <label
               htmlFor="signatureUpload"
               className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded text-sm font-medium cursor-pointer"
@@ -67,8 +62,7 @@ const UploadDocuments = () => {
               onChange={(e) => handleFileChange(e, setSignatureFile)}
             />
             <p className="text-gray-500 text-xs">
-              Kindly upload a signature done with a pen on a blank piece of paper.
-              Signature done by pencil, markers, etc. will not be accepted.
+              Kindly upload a signature done with a pen on a blank piece of paper. Signature done by pencil, markers, etc. will not be accepted.
             </p>
           </div>
           {signatureFile && (
@@ -79,7 +73,7 @@ const UploadDocuments = () => {
         {/* Copy of PAN Upload */}
         <div className="mb-8">
           <label className="block text-gray-600 text-sm mb-2">Copy of PAN*</label>
-          <div className="flex space-x-4 items-center">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center">
             <label
               htmlFor="panUpload"
               className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded text-sm font-medium cursor-pointer"
@@ -102,12 +96,7 @@ const UploadDocuments = () => {
 
         {/* Proceed to Pay Button */}
         <div className="text-center">
-          {/* <button
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md text-sm"
-          >
-            Proceed to Pay
-          </button> */}
-          <PaymentButton/>
+          <PaymentButton />
         </div>
       </div>
     </div>
